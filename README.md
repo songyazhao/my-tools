@@ -1,7 +1,7 @@
-# 自用库 以及 一些曾经写过的小Demo:
+# 自用库、写过的小Demo:
 
- - [demo](https://github.com/songyazhao/my-tools/demo)
- - [lib](https://github.com/songyazhao/my-tools/src/lib)
+ - [demo](https://github.com/songyazhao/my-tools/tree/master/demo)
+ - [lib](https://github.com/songyazhao/my-tools/tree/master/src/lib)
 
 ``` bash
 
