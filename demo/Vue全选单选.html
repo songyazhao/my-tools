@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <title>Vue全选单选</title>
+	</head>
+
+	<body>
+
+		<div id="box">
+			<input type="checkbox" v-model="checkAll" @click="selectAll">全选
+			<ul>
+				<li v-for="(item, index) in checkData">
+					<input type="checkbox" v-model="item.checked" :id="'check'+index">
+					<label :for="'check'+index">{{item.name}}</label>
+				</li>
+			</ul>
+		</div>
+
+		<script src="//cdn.bootcss.com/vue/2.2.4/vue.min.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#box',
+				data: {
+					checkAll: false, //全选开关
+					checkData: [ //单选开关
+						{checked: false, name: '小黑', id: 1},
+						{checked: false, name: '小红', id: 2},
+						{checked: false, name: '小白', id: 3},
+						{checked: false, name: '小蓝', id: 4}
+					],
+					checkedArr: new Array()//存放选中的按钮
+				},
+				methods: {
+					selectAll: function() {
+						this.checkData.forEach(function(v) {
+							v.checked = vm.checkAll ? true : false//子选按钮驱动全选按钮
+						})
+					}
+				},
+				watch: {//监测数据变化
+					checkData: {
+						handler: function () {
+							var isCheckAll = this.checkData.every(function(v) { return v.checked == true });
+							this.checkAll = isCheckAll ? true : false;//全选按钮驱动子按钮
+							//数据变化之后更新已选中的数据
+							this.checkedArr = this.checkData.filter(function(v) { return v.checked == true}).map(function (v) { return v.id });
+						},
+						deep: true
+					}
+				}
+			});
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,30 @@
+﻿# EJS模板解析并生成HTML插件
+npm install --save-dev html-webpack-plugin
+# babel 转ES6
+npm install --save-dev babel-loader babel-core
+npm install --save-dev babel-preset-latest
+
+# CSS相关loader
+npm install --save-dev css-loader style-loader
+npm install --save-dev postcss-loader
+# postcss下CSS自动补全插件
+npm install --save-dev autoprefixer
+
+# file-loader 处理html与css文件中的图片
+npm install --save-dev file-loader
+# url-loader 可以加limit参数,大于指定值交由file-loader处理,小于指定值转为base64
+npm install --save-dev url-loader
+# image--webpack-loader 可以自动压缩图片
+npm install --save-dev image--webpack-loader
+
+
+
+npm install webpack-dev-server -g
+# 以监听模式自动运行 webpack
+# http://localhost:8080 或 http://localhost:8080/webpack-dev-server
+# 运行 $ webpack-dev-server --inline --hot --quiet --progress --colors
+
+
+
+# CMD 命令
+webpack --colors --progress --display-reasons --watch --module-bind 'css=style-loader!css-loader'

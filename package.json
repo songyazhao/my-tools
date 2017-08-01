@@ -1,0 +1,23 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "a test prject",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/songyazhao/my-tools.git"
+  },
+  "keywords": [
+    "tools",
+    "test-demo"
+  ],
+  "author": "SongYaZhao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/songyazhao/my-tools/issues"
+  },
+  "homepage": "https://github.com/songyazhao/my-tools#readme"
+}

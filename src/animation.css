@@ -1,0 +1,172 @@
+/*运动轨迹 圆----start*/
+@keyframes rot {
+    from {
+        transform: rotate(0deg)
+                   translate(-150px)
+                   rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg)
+                   translate(-150px)
+                   rotate(-360deg);
+    }
+}
+
+.example {
+    animation: rot 3s infinite linear;
+}/*----end*/
+
+/*进度条----start*/
+.bar {
+    height: 20px;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+    position: relative;
+    margin: 0.5rem 0;
+    border-radius: 5px 0 0 5px;
+}
+
+@media(max-width: 350px) {
+    .bar {
+        margin: 2.5rem 0 0.5rem;
+    }
+}
+
+.bar.mint {
+    background-color: #f5f5f5;
+    background-image: repeating-linear-gradient(-45deg, #ffbb00, #ffbb00 4px, #f7b207 4px, #f7b207 8px);
+    background-size: 268px 100%;
+    animation: barberpole 8s linear infinite;
+}
+
+.bar.active:after, .bar.active:before {
+    opacity: 1;
+}
+
+.bar:before {
+    !content: attr(data-skill);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    height: 40px;
+    font-style: italic;
+    opacity: 0;
+    transition: opacity 2s 0.6s;
+}
+
+@media(max-width: 350px) {
+    .bar:before {
+        top: -100%;
+        color: black;
+        padding: 10px 0 0;
+    }
+}
+
+.bar:after {
+    ~content: attr(data-percent) "%";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 2s 0.6s;
+}
+
+@media(max-width: 350px) {
+    .bar:after {
+        left: 0;
+    }
+}
+
+@keyframes barberpole {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 268px 0%;
+    }
+}
+
+.bar.active[data-percent="5"] {
+    width: 5%;
+}
+
+.bar.active[data-percent="10"] {
+    width: 10%;
+}
+
+.bar.active[data-percent="15"] {
+    width: 15%;
+}
+
+.bar.active[data-percent="20"] {
+    width: 20%;
+}
+
+.bar.active[data-percent="25"] {
+    width: 25%;
+}
+
+.bar.active[data-percent="30"] {
+    width: 30%;
+}
+
+.bar.active[data-percent="35"] {
+    width: 35%;
+}
+
+.bar.active[data-percent="40"] {
+    width: 40%;
+}
+
+.bar.active[data-percent="45"] {
+    width: 45%;
+}
+
+.bar.active[data-percent="50"] {
+    width: 50%;
+}
+
+.bar.active[data-percent="55"] {
+    width: 55%;
+}
+
+.bar.active[data-percent="60"] {
+    width: 60%;
+}
+
+.bar.active[data-percent="65"] {
+    width: 65%;
+}
+
+.bar.active[data-percent="70"] {
+    width: 70%;
+}
+
+.bar.active[data-percent="75"] {
+    width: 75%;
+}
+
+.bar.active[data-percent="80"] {
+    width: 80%;
+}
+
+.bar.active[data-percent="85"] {
+    width: 85%;
+}
+
+.bar.active[data-percent="90"] {
+    width: 90%;
+}
+
+.bar.active[data-percent="95"] {
+    width: 95%;
+}
+
+.bar.active[data-percent="100"] {
+    width: 100%;
+}/*----end*/

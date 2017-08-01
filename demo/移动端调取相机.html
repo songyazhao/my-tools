@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- common start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>移动端调取相机</title>
+    <style scoped>
+      video { transform: scaleX(-1); }
+      p { text-align: center; }
+    </style>
+</head>
+<body>
+    <article>
+        <h1>Snapshot Kiosk</h1>
+        <section id="splash">
+          <p id="errorMessage">Loading...</p>
+        </section>
+        <section id="app" hidden>
+          <p><video id="monitor" autoplay></video> <canvas id="photo"></canvas></p>
+          <p><input type=button value="&#x1F4F7;" onclick="snapshot()"></p>
+        </section>
+        <script>
+            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+            navigator.getUserMedia({
+                video: true
+            }, gotStream, noStream);
+            var video = document.getElementById('monitor');
+            var canvas = document.getElementById('photo');
+
+            function gotStream(stream) {
+                video.src = URL.createObjectURL(stream);
+                video.onerror = function() {
+                    stream.stop();
+                };
+                stream.onended = noStream;
+                video.onloadedmetadata = function() {
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    document.getElementById('splash').hidden = true;
+                    document.getElementById('app').hidden = false;
+                };
+            }
+
+            function noStream() {
+                document.getElementById('errorMessage').textContent = 'No camera available.';
+            }
+
+            function snapshot() {
+                canvas.getContext('2d').drawImage(video, 0, 0);
+            }
+        </script>
+    </article>
+</body>
+</html>

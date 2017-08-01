@@ -1,0 +1,147 @@
+/**
+ * Reset css, for mobile terminal
+ * 用 于 移 动 端
+ */
+
+/* 适配 */
+html{
+    font-size: 10px;
+/* 禁用iPhone中Safari的字号自动调整 */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+/* 禁止字 可选中 */
+    -webkit-user-select:none;
+    user-select:none;
+}
+@media screen and (min-width: 375px){
+  html{
+    font-size: 11.7187px;
+  }
+}
+@media screen and (min-width: 414px){
+  html{
+    font-size: 12.9375px;
+  }
+}
+body{
+	color:#2d3841;
+	font-size:14px;
+	min-width:320px;
+	font-family:Helvetica Neue,'微软雅黑',Tahoma,Arial,sans-serif;
+	font-weight:normal;
+	line-height:1.5;
+	background: #F3F3F3;
+	height:100%;
+}
+
+/* 去除iPhone中默认的input样式  清除苹果浏览器的圆角表单*/
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input{-webkit-appearance:none; resize: none;}
+/* 取消链接高亮  */
+body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,
+aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); }
+html,body,h1,h2,h3,h4,h5,p,div,ul,li,span,p,dl{
+	margin:0;
+	padding:0;
+}
+ul,li,p,div,article,section,input{
+    -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+                box-sizing: border-box;
+}
+ul,li{
+	list-style:none;
+}
+html,body,img{
+	border:0;
+}
+em{
+	font-style:normal;
+}
+h1,h2,h2,h3,strong,em,i{
+	font-style:normal;
+	font-weight:normal;
+}
+a,a:hover{
+	text-decoration:none;
+}
+a{
+	color:#333;
+}
+select{
+	background: #fff url() 0 0 no-repeat;
+}
+input{
+	font-family:Helvetica Neue,'微软雅黑',Tahoma,Arial,sans-serif;
+	height:25px;
+	line-height: 25px;
+	color:#2d3841;
+}
+input::-webkit-input-placeholder{
+    color:#A1A1A1;
+    font-family:Helvetica Neue,'微软雅黑',Tahoma,Arial,sans-serif;
+    font-size:1.07692rem;
+}
+textarea::-webkit-input-placeholder{
+    color:#A1A1A1;
+    font-family:Helvetica Neue,'微软雅黑',Tahoma,Arial,sans-serif;
+    font-size:1.07692rem;
+}
+textarea{
+    font-family:Helvetica Neue,'微软雅黑',Tahoma,Arial,sans-serif;
+    color:#2d3841 !important;
+}
+[v-cloak], .d-n{display: none}/* Vue.JS */
+.yellow{color:#fb0!important}
+.red{color:#e4393c!important}
+.green{color:#64c54a!important}
+.gray{color:#a1a1a1!important}
+.c-59{color:#595959!important}
+.c-A1{color:#A1A1A1!important}
+.c-B7{color:#B7B7B7!important}
+.t-e-l{text-align:left}
+.t-e-c{text-align:center}
+.t-e-r{text-align:right}
+.f-l{float:left}
+.f-r{float:right}
+.o-h{overflow:hidden}
+.mask {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.7;
+    z-index: 1000;
+    display: none;
+}
+
+.clearfix:after{
+    clear:both;
+    content:'';
+    font-size:0;
+    display:block;
+    visibility:hidden;
+    height:0;
+}
+
+example{
+    -webkit-box-flex: 1;/* OLD - iOS 6-, Safari 3.1-6, android 2.1-3.0*/
+    -webkit-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient:vertical;/*等同新版的flex-direction*/
+    -webkit-box-lines:multiple;/*等同新版的flex-wrap*/
+    flex-flow: row wrap;/*flex-direction和flex-wrap简写*/
+    -webkit-box-align: center;/*等同新版align-content*/
+    -webkit-box-pack: center;/*等同新版justify-content*/
+    -webkit-align-content: center;
+    align-content: center;
+    overflow: hidden;
+}
