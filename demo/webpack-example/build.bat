@@ -1,0 +1,3 @@
+@echo off
+npm run build
+echo ......编译结束......
